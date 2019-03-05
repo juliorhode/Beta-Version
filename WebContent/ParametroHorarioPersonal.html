@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+	th,td{
+		text-align: center;
+	}
+	table{
+		margin-left: 50%;
+		margin-right: 50%;
+	}
+	#generaHorario{
+		margin-top: 2%;
+		margin-left: 50%;
+		margin-right: 50%;
+	}
+	@media screen and (max-width: 1370px) and (min-width: 800px){
+		table {
+			margin-left: 50%;
+			margin-right: 50%;
+		}
+	}
+	@media screen and (min-width: 760px){
+		table {
+			margin-left: 50%;
+			margin-right: 50%;
+		}
+	}
+	@media screen and (max-width: 759px){
+		table {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		
+	}
+	
+}
+</style>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row content">
+			<div class="col-sm-12"><!-- Inicio datos especialista -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title" align="center">Datos del Especialista</h4>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="panel panel-default">
+                       	<div class="panel-body">
+	                        <div class="col-sm-3">
+		                        <div class="form-group">
+		                    		<label for="cedula_especialista">C&eacute;dula</label>
+		                    		<input type="text" id="cedula_especialista" data-toggle="tooltip" title="Puede presionar la tecla enter y se desplegará una ventana con los medicos" autofocus class="form-control" name="cedula_especialista" value="13802982">
+	                			</div>
+	                		</div>
+	                		<!-- Esto es traido desde AJAX -->
+	                		<div class="col-sm-3">
+		                        <div class="form-group">
+		                    		<label for="nombreEspecialista">Nombre</label>
+		                    		<input type="text" id="nombreEspecialista" class="form-control" name="nombreEspecialista" disabled="disabled" value="Julio Rhode">
+	                			</div>
+	                		</div>
+	                		<div class="col-sm-3">
+		                        <div class="form-group">
+		                    		<label for="in_especialidad">Especialidad</label>
+		                    		<input type="text" id="in_especialidad" class="form-control" name="in_especialidad" disabled="disabled" value="Medico">
+	                			</div>
+	                		</div>
+	                		<div class="col-sm-3">
+	                			<div class="form-group">
+		                    		<label for="in_turno">Especialidad</label>
+		                    		<input type="text" id="in_turno" class="form-control" name="in_turno" disabled="disabled" value="Mañana">
+	                			</div>
+							</div>
+							<!-- Hasta aqui es traido desde AJAX -->
+	                    </div>
+                    </div>
+				</div>
+			</div><!-- Fin datos especialista -->
+			<div class="col-sm-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title" align="center">Horario registrado</h4>
+					</div>
+				</div>
+				<div class="col-sm-6">
+<!-- 	           		<div class="table-responsive"> -->
+		           		<table class="table table-bordered">
+						    <thead>
+							    <tr>
+								    <th>N° Citas</th>
+								    <th>Intervalo</th>
+								    <th>Hora Inicio</th>
+							    </tr>
+						    </thead>
+						    <tbody>
+							    <tr>
+								    <td>10</td>
+								    <td>30</td>
+								    <td>07:00 a.m</td>
+							    </tr>
+						    </tbody>
+						</table>
+<!-- 					</div> -->
+               	</div>
+			</div>
+			<div class="col-sm-12"><!-- Inicio carga horario -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title" align="center">Carga de horario personalizado</h4>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="panel panel-default">
+                       	<div class="panel-body">
+	                        <div class="col-sm-4" >
+								<div class="form-group">
+				               		<label for="hora_inicio">Hora Inicio</label><br>
+				               		<input type="text" name="hora_inicio" readonly class="btn btn-default" id="hora_inicio">
+				                </div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+				               		<label for="nu_citas">Cantidad de Citas</label><br>
+				                    <input type="text" name="nu_citas" readonly  class="btn btn-default" id="nu_citas" >
+				                </div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+						        	<label for="nu_intervalo">Intervalo de Citas</label>
+						      		<select class="form-control" readonly id="nu_intervalo" style="width: 180px;">
+						      			<option></option>
+								        <option>05</option>
+								        <option>10</option>
+								        <option>15</option>
+								        <option>20</option>
+								        <option>25</option>
+								        <option>30</option>
+								        <option>35</option>
+								        <option>40</option>
+								        <option>45</option>
+								        <option>50</option>
+								        <option>55</option>
+								        <option>60</option>
+						      		</select>
+						    	</div>
+							</div>
+							<div class="col-sm-11"">
+								<!--style="margin-left: 35%;" MANEJARLO CON @MEDIA SCREEN-->
+								<button type="button" id="generaHorario" class="btn btn-primary">Generar Horario</button>
+							</div>
+	                    </div>
+                    </div>
+				</div>
+			</div><!-- Fin carga horario -->
+ 		</div><!-- Fin row content -->
+ 	</div><!-- Fin container-fluid -->
+</body>
+</html>
