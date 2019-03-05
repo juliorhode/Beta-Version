@@ -87,7 +87,7 @@
 			</div>
 		</div>
 		
-		<div class="col-sm-11"">
+		<div class="col-sm-11">
 				<!--style="margin-left: 35%;" MANEJARLO CON @MEDIA SCREEN-->
 				<button style="margin-left: 45%;margin-top: 5%;" type="button" id="generaHorario" onclick="horario()" class="btn btn-primary">Generar Horario</button>
 			</div>
